@@ -8,7 +8,7 @@ else:
     from urllib2 import urlopen
 
 
-def download_file(url, interruption=True):
+def download_file(url, interruption=False):
     response = urlopen(url)
     # Trozos de 5 MB
     CHUNK = 1024 * 5120
@@ -33,3 +33,5 @@ def download_file(url, interruption=True):
 url = 'http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/'
 url = url + 'debian-8.6.0-amd64-CD-1.iso'
 download_file(url)
+# Con interrupcion:
+# download_file(url, True)
