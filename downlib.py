@@ -7,6 +7,11 @@ if PYTHON3:
 else:
     from urllib2 import urlopen
 
+try:
+   input = raw_input
+except NameError:
+   pass
+
 
 def download_file(url, interruption=False):
     response = urlopen(url)
